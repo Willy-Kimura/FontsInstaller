@@ -10,7 +10,9 @@ Below is a preview of the library in action:
 ![fonts-installer-usage-01](Assets/fonts-installer-usage-01.gif)
 
 # Installation
-> *NuGet packages coming shortly...*
+To install via the [NuGet Package Manager](https://www.nuget.org/packages/FontsInstaller/) Console, run:
+
+> `Install-Package FontsInstaller -Version 1.0.0`
 
 # Features
 Here's a comprehensive list of the features available:
