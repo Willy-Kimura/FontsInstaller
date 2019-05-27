@@ -1,5 +1,5 @@
 # FontsInstaller
-[![fonts-installer-nuget](Assets/nuget-1.0.0-brightgreen.svg)](https://www.nuget.org/packages/FontsInstaller/) [![fonts-installer-donate](Assets/donate-paypal-blue.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DJ8D9CE8BWA3J&source=url)
+[![fonts-installer-nuget](Assets/nuget-1.0.0.svg)](https://www.nuget.org/packages/FontsInstaller/) [![wk-donate](Assets/donate-paypal.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DJ8D9CE8BWA3J&source=url)
 
 ![fonts-installer-logo](Assets/fonts-installer-logo.png)
 
@@ -10,13 +10,7 @@ Below is a preview of the library in action:
 ![fonts-installer-usage-01](Assets/fonts-installer-usage-01.gif)
 
 # Installation
-To install via the [NuGet Package Manager](https://www.nuget.org/packages/FontsInstaller/) Console, run:
-
-> `Install-Package FontsInstaller -Version 1.0.0`
-
-To install the command-line version via the [NuGet Package Manager](https://www.nuget.org/packages/FontsInstaller.Cmd/) Console, run:
-
-> `Install-Package FontsInstaller.Cmd -Version 1.0.0`
+> *NuGet packages coming shortly...*
 
 # Features
 Here's a comprehensive list of the features available:
@@ -216,7 +210,7 @@ fontsInstaller.InstallationCompleted += (snd, args) =>
 
 Though under very rare circumstances would fonts fail to install, the `InstallationCompleted` event will help determine whether the entire process was successful and the fonts that failed to install. You can view the list of these fonts using the argument property `FontsNotInstalled`. Alternatively, to view the list of fonts installed, use the argument property `FontsInstalled`.
 
-After the fonts-installation process has been completed, the library automatically restarts your application in order for the font changes to be effected in your Forms. *Please note that this task is mandatory since fonts' resource initialization occurs whenever an application is loaded in memory*. This then means that once the installation task completes, a restart is invoked and the application restarted. You can however intercept this behavioral event either by adding an `ApplicationRestarting` event or setting the `AutoRestart` property to `false`.
+After the fonts-installation process has been completed, the library will restart your application in order for the font changes to be effected in all Forms. *Please note that this task is mandatory since fonts' resource initialization occurs whenever an application is loaded in memory*. This then means that once the installation task completes, a restart is invoked and the application restarted. You can however intercept this behaviour either by adding an `ApplicationRestarting` event or setting the `AutoRestart` property to `false`.
 
 Here's an example using the event described to control the restart event:
 
@@ -252,7 +246,7 @@ private void fontsInstaller1_ApplicationRestarting(object sender, EventArgs e)
 }
 ```
 
-You can also use the `InstallingFonts` event to notify users of the installation process:
+To to notify users of the installation process, use the `InstallingFonts` event :
 
 ```c#
 fontsInstaller.InstallingFonts += delegate
@@ -262,9 +256,9 @@ fontsInstaller.InstallingFonts += delegate
 };
 ```
 
-To notify users when the application is about to restart, you can make use of the method `ShowRestartDialog()` to display the default Restart dialog. This method accepts two parameters: a `timeout` for how long the restart dialog should take (mostly used when processing a particular task), and a `restartOnFinish` boolean parameter which when set to `true` automatically restarts your application once the timeout is complete. 
+To notify users when the application is about to restart, you can make use of the method `ShowRestartDialog()` to display the default Restart dialog. This method accepts two parameters: a `timeout` for how long the Restart dialog should take (*mostly used when processing a particular task*), and a `restartOnFinish` boolean parameter which when set to `true` will restart your application once the timeout is complete.
 
-Here are two examples on using the described method:
+Here are two examples using the described method:
 
 ```c#
 fontsInstaller.ApplicationRestarting += delegate
@@ -289,7 +283,7 @@ fontsInstaller.ApplicationRestarting += delegate
 
 #### Silent Installs
 
-To simplify the entire process and provide a silent install, here's a working sample code:
+To simplify the entire process and provide a silent install, here's a working code sample:
 
 ```c#
 var fontsInstaller = new FontsInstaller();
@@ -312,9 +306,9 @@ fontsInstaller.ApplicationRestarting += (snd, args) =>
 
 #### Custom Installer Dialogs
 
-If you want to move a mile further and create your own customized Installer Dialog, you can do so using the property `CustomInstallerDialog`. Ensure your Form includes a button that returns a `DialogResult.OK` and (optionally) a `DialogResult.Cancel` button. 
+If you want to move a mile further and create your own customized Installer Dialog, you can do so using the property `CustomInstallerDialog`. Ensure your Form includes a button that returns a `DialogResult.OK`. Optionally, you can provide a `DialogResult.Cancel` button in case you wish to provide a *cancel* button to users.
 
-Here's a code sample of the entire process:
+Here's a code sample using a simple custom Installer dialog:
 
 ```c#
 var fontsInstaller = new FontsInstaller();
@@ -345,16 +339,20 @@ content.Text = fontsInstaller.ParseString(
                "Please click 'InstallFonts' to install " +
                "the following fonts:\n\n{Fonts}\n\n");
 
+installButton.BringToFront();
+installButton.Cursor = Cursors.Hand;
 installButton.Text = "Install Fonts";
 installButton.DialogResult = DialogResult.OK;
-installButton.Location = new Point(12, content.Bottom);
+installButton.Location = new Point(
+    content.Right - installButton.Width, content.Bottom);
 
-myInstallerForm.Height = 150;
 myInstallerForm.ControlBox = false;
 myInstallerForm.Text = "Fonts Installer";
 myInstallerForm.AcceptButton = installButton;
+myInstallerForm.Height = (12 * 4) + (installButton.Bottom);
 myInstallerForm.StartPosition = FormStartPosition.CenterScreen;
-
+installButton.Anchor = AnchorStyles.Right | AnchorStyles.Bottom;
+            
 fontsInstaller.CustomInstallerDialog = myInstallerForm;
 fontsInstaller.Install();
 ```
@@ -372,7 +370,7 @@ public MainWindow()
 
 ## The Command-line Utility
 
-![fonts-installer-cmd-help](C:\Users\Kenboi\source\repos\FontsInstaller\Assets\fonts-installer-cmd-help.png)
+![fonts-installer-cmd-help](Assets/fonts-installer-cmd-help.png)
 
 Another seamless way of installing fonts is using Fonts Installer's command-line utility **FontsIstaller.Cmd**.
 
@@ -432,7 +430,7 @@ Below is a list of sample commands you can tailor for use:
   FontsInstaller.Cmd -p --title "MyApp" --content "Fonts installation required." --icon "myApp.ico" -i "myfont.ttf"
   ```
 
-  - For the *icon* flag, you can either pass your application's path or the path to an icon file - both as *relative* or *absolute* paths:
+  - For the *icon* flag, you can pass either your application's path (**.exe** or **.dll**) or the path to an icon file - both as *relative* or *absolute* paths:
 
     ```
     --icon "MyApp.exe"
@@ -442,10 +440,10 @@ Below is a list of sample commands you can tailor for use:
     --icon "MyApp.ico"
     ```
 
-To clarify more on the **exit codes**, here's a short comprehensive list:
+To clarify more on the **exit codes**:
 
 - `0` : The fonts installation process was successful. (Using the `-i` or `--install` option.)
-- `-1` : The fonts installation process was unsuccessful. It is also returned using the `-c` or `--check` option, meaning that the font-file passed was not valid.
+- `-1` : The fonts installation process was unsuccessful. This is also returned using the `-c` or `--check` option meaning that the font-file passed was not valid.
 - `1` : The font is not installed.  (Returned when the `-c` or `--check` option is used.)
 
 ## Donate

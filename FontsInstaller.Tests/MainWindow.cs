@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
+
+using WK.Libraries.FontsInstallerNS;
+using WK.Libraries.FontsInstallerNS.Models;
 
 namespace Tests
 {
@@ -13,7 +17,7 @@ namespace Tests
         }
 
         #endregion
-
+        
         #region Events
 
         private void OnLoad(object sender, EventArgs e)

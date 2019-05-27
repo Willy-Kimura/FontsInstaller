@@ -97,6 +97,7 @@
             this.left.Name = "left";
             this.left.Size = new System.Drawing.Size(1, 101);
             this.left.TabIndex = 4;
+            this.left.Visible = false;
             // 
             // right
             // 
@@ -106,6 +107,7 @@
             this.right.Name = "right";
             this.right.Size = new System.Drawing.Size(1, 101);
             this.right.TabIndex = 5;
+            this.right.Visible = false;
             // 
             // top
             // 
@@ -115,6 +117,7 @@
             this.top.Name = "top";
             this.top.Size = new System.Drawing.Size(326, 1);
             this.top.TabIndex = 6;
+            this.top.Visible = false;
             // 
             // bottom
             // 
@@ -124,6 +127,7 @@
             this.bottom.Name = "bottom";
             this.bottom.Size = new System.Drawing.Size(326, 1);
             this.bottom.TabIndex = 7;
+            this.bottom.Visible = false;
             // 
             // TaskWait
             // 

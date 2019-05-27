@@ -14,6 +14,7 @@
 
 using System;
 using System.Windows.Forms;
+using WK.Libraries.FontsInstallerNS.Helpers;
 
 namespace WK.Libraries.FontsInstallerNS.Views.Forms
 {
@@ -82,6 +83,8 @@ namespace WK.Libraries.FontsInstallerNS.Views.Forms
 
         public void Show(string taskName, string taskStatus, int timeout = 2000, bool restartOnFinish = false)
         {
+            Shadower.ApplyShadows(this);
+
             Text = taskName;
             RestartOnFinish = restartOnFinish;
 
