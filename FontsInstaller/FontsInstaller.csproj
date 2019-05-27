@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{463940B7-943D-45B4-9B12-474CED8B3A40}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WK.Libraries.FontsInstallerNS</RootNamespace>
+    <AssemblyName>FontsInstaller</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\FontsInstaller.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>wk-fonts-installer.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Costura, Version=1.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Costura.Fody.1.6.0\lib\portable-net+sl+win+wpa+wp\Costura.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ookii.Dialogs">
+      <HintPath>..\..\..\..\Documents\Visual Studio 2017\Projects\Ookii.Dialogs\Ookii.Dialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="ProgressControls">
+      <HintPath>..\..\..\..\Documents\Visual Studio 2017\Projects\ProgressIndicator1.2_source\ProgressIndicator\ProgressIndicator\bin\Debug\ProgressControls.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FontsInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FontsInstaller.Designer.cs">
+      <DependentUpon>FontsInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Base.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Editors\FontSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Editors\FontSelector.Designer.cs">
+      <DependentUpon>FontSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Editors\StringsEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Editors\StringsEditor.Designer.cs">
+      <DependentUpon>StringsEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\TaskWait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\TaskWait.Designer.cs">
+      <DependentUpon>TaskWait.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Editors\FontSelector.resx">
+      <DependentUpon>FontSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Editors\StringsEditor.resx">
+      <DependentUpon>StringsEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\TaskWait.resx">
+      <DependentUpon>TaskWait.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FodyWeavers.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Install.vbs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="wk-fonts-installer.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Fody.2.0.0\build\portable-net+sl+win+wpa+wp\Fody.targets" Condition="Exists('..\packages\Fody.2.0.0\build\portable-net+sl+win+wpa+wp\Fody.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Fody.2.0.0\build\portable-net+sl+win+wpa+wp\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.2.0.0\build\portable-net+sl+win+wpa+wp\Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\Costura.Fody.1.6.0\build\portable-net+sl+win+wpa+wp\Costura.Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.1.6.0\build\portable-net+sl+win+wpa+wp\Costura.Fody.targets'))" />
+  </Target>
+  <Import Project="..\packages\Costura.Fody.1.6.0\build\portable-net+sl+win+wpa+wp\Costura.Fody.targets" Condition="Exists('..\packages\Costura.Fody.1.6.0\build\portable-net+sl+win+wpa+wp\Costura.Fody.targets')" />
+</Project>
