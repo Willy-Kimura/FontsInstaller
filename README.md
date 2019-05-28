@@ -1,5 +1,5 @@
 # FontsInstaller
-[![fonts-installer-nuget](Assets/nuget-1.0.0.svg)](https://www.nuget.org/packages/FontsInstaller/) [![wk-donate](Assets/donate-paypal.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DJ8D9CE8BWA3J&source=url)
+[![fonts-installer-nuget](Assets/nuget-1.0.0.svg)](https://www.nuget.org/packages/FonstInstaller/) [![wk-donate](Assets/donate-paypal.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DJ8D9CE8BWA3J&source=url)
 
 ![fonts-installer-logo](Assets/fonts-installer-logo.png)
 
@@ -448,6 +448,3 @@ To clarify more on the **exit codes**:
 - `-1` : The fonts installation process was unsuccessful. This is also returned using the `-c` or `--check` option meaning that the font-file passed was not valid.
 - `1` : The font is not installed.  (Returned when the `-c` or `--check` option is used.)
 
-## Donate
-
-Firstly off, a big **thank you** to all the approvals and appreciations I've received so far for making this very handy and lightweight library become a reality. Your thank-you [donation](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DJ8D9CE8BWA3J&source=url) towards making this component library ([and others](https://github.com/Willy-Kimura/)) better by the day are most welcome. Many thanks!
