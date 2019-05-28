@@ -14,6 +14,8 @@ To install via the [NuGet Package Manager](https://www.nuget.org/packages/FontsI
 
 > `Install-Package FontsInstaller -Version 1.0.0`
 
+To get the command-line utility, *FontsInstaller.Cmd*, head on over to the [Releases](https://github.com/Willy-Kimura/FontsInstaller/releases) section.
+
 # Features
 Here's a comprehensive list of the features available:
 
@@ -447,4 +449,3 @@ To clarify more on the **exit codes**:
 - `0` : The fonts installation process was successful. (Using the `-i` or `--install` option.)
 - `-1` : The fonts installation process was unsuccessful. This is also returned using the `-c` or `--check` option meaning that the font-file passed was not valid.
 - `1` : The font is not installed.  (Returned when the `-c` or `--check` option is used.)
-
