@@ -1,7 +1,11 @@
 # FontsInstaller
-[![fonts-installer-nuget](Assets/nuget-1.0.0.svg)](https://www.nuget.org/packages/FonstInstaller/) [![wk-donate](Assets/donate-paypal.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DJ8D9CE8BWA3J&source=url)
+[![fonts-installer-nuget](Assets/nuget-1.0.0.svg)](https://www.nuget.org/packages/FontsInstaller/) [![wk-donate](Assets/donate-paypal.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DJ8D9CE8BWA3J&source=url)
 
 ![fonts-installer-logo](Assets/fonts-installer-logo.png)
+
+> If you previously downloaded or installed [this package](https://www.nuget.org/packages/FonstInstaller/) from NuGet, please consider using [this new package](https://www.nuget.org/packages/FonstInstaller/) in order to receive the latest updates once they're published. There was a small typo error that occurred when publishing the package, *Fon**st**Installer* rather than *Fon**ts**Installer*.
+
+
 
 **FontsInstaller** is a .NET library that lets developers choose the fonts required by their applications then at runtime auto-checks and installs them if not available on any client machine.
 
