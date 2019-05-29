@@ -16,7 +16,7 @@ To install via the [NuGet Package Manager](https://www.nuget.org/packages/FontsI
 
 > `Install-Package FontsInstaller -Version 1.0.0`
 
-To get the command-line utility, *FontsInstaller.Cmd*, head on over to the [Releases](https://github.com/Willy-Kimura/FontsInstaller/releases) section.
+To get the command-line utility, *FontsInstaller.Cmd*, head over to the [Releases](https://github.com/Willy-Kimura/FontsInstaller/releases) section.
 
 # Features
 Here's a comprehensive list of the features available:
