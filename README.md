@@ -1,5 +1,5 @@
 # FontsInstaller
-[![fonts-installer-nuget](Assets/nuget-1.0.0.svg)](https://www.nuget.org/packages/FontsInstaller/) [![wk-donate](Assets/donate-paypal.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DJ8D9CE8BWA3J&source=url)
+[![fonts-installer-nuget](https://img.shields.io/badge/NuGet-1.3.0-brightgreen.svg)](https://www.nuget.org/packages/FontsInstaller/) [![wk-donate](Assets/donate-paypal.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DJ8D9CE8BWA3J&source=url)
 
 ![fonts-installer-logo](Assets/fonts-installer-logo.png)
 
@@ -14,7 +14,7 @@ Below is a preview of the library in action:
 
 To install via the [NuGet Package Manager](https://www.nuget.org/packages/FontsInstaller/) Console, run:
 
-> `Install-Package FontsInstaller -Version 1.0.0`
+> `Install-Package FontsInstaller`
 
 To get the command-line utility, *FontsInstaller.Cmd*, head over to the [Releases](https://github.com/Willy-Kimura/FontsInstaller/releases) section.
 
