@@ -246,13 +246,31 @@ namespace WK.Libraries.FontsInstallerNS
         #region Non-browsable
 
         /// <summary>
-        /// Gets or sets the as the parent form.
+        /// Gets or sets the parent form.
         /// </summary>
         [Browsable(false)]
         public Form ParentForm
         {
-            get { return ((Form)ContainerControl); }
-            set { ContainerControl = value; }
+            get {
+
+                if (ContainerControl is Form)
+                    return ((Form)ContainerControl);
+                else
+                    return ContainerControl.FindForm();
+                
+            }
+            set {
+
+                try
+                {
+                    if (ContainerControl is Form)
+                        ContainerControl = value;
+                    else
+                        ContainerControl = value.FindForm();
+                }
+                catch (Exception) { }
+
+            }
         }
 
         /// <summary>
