@@ -3,10 +3,6 @@
 
 ![fonts-installer-logo](Assets/fonts-installer-logo.png)
 
-> If you previously downloaded or installed [this package](https://www.nuget.org/packages/FonstInstaller/) from NuGet, please consider using [this new package](https://www.nuget.org/packages/FonstInstaller/) in order to receive the latest updates once they're published. There was a small typo error that occurred when publishing the package, *Fon**st**Installer* rather than *Fon**ts**Installer*.
-
-
-
 **FontsInstaller** is a .NET library that lets developers choose the fonts required by their applications then at runtime auto-checks and installs them if not available on any client machine.
 
 Below is a preview of the library in action:
@@ -14,6 +10,8 @@ Below is a preview of the library in action:
 ![fonts-installer-usage-01](Assets/fonts-installer-usage-01.gif)
 
 # Installation
+>If you previously downloaded or installed [this package](https://www.nuget.org/packages/FonstInstaller/) from NuGet, please consider using [this new package](https://www.nuget.org/packages/FonstInstaller/) in order to receive the latest updates once they're published. There was a small typo error that occurred when publishing the package, *Fon**st**Installer* rather than *Fon**ts**Installer*.
+
 To install via the [NuGet Package Manager](https://www.nuget.org/packages/FontsInstaller/) Console, run:
 
 > `Install-Package FontsInstaller -Version 1.0.0`
