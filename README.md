@@ -10,7 +10,7 @@ Below is a preview of the library in action:
 ![fonts-installer-usage-01](Assets/fonts-installer-usage-01.gif)
 
 # Installation
->If you previously downloaded or installed [this package](https://www.nuget.org/packages/FonstInstaller/) from NuGet, please consider using [this new package](https://www.nuget.org/packages/FonstInstaller/) in order to receive the latest updates once they're published. There was a small typo error that occurred when publishing the package, *Fon**st**Installer* rather than *Fon**ts**Installer*.
+>If you previously downloaded or installed [this package](https://www.nuget.org/packages/FonstInstaller/) from NuGet, please consider using [this new package](https://www.nuget.org/packages/FontsInstaller/) in order to receive the latest updates once they're published. There was a small typo error that occurred when publishing the package, *Fon**st**Installer* rather than *Fon**ts**Installer*.
 
 To install via the [NuGet Package Manager](https://www.nuget.org/packages/FontsInstaller/) Console, run:
 
