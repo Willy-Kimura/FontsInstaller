@@ -16,7 +16,7 @@ To install via the [NuGet Package Manager](https://www.nuget.org/packages/FontsI
 
 > `Install-Package FontsInstaller`
 
-To install the command-line utility via [NuGet](To install via the [NuGet Package Manager](https://www.nuget.org/packages/FontsInstaller/) Console, run:), run:
+To install the command-line utility via [NuGet](https://www.nuget.org/packages/FontsInstaller.Cmd/), run:
 
 > `Install-Package FontsInstaller.Cmd`
 
