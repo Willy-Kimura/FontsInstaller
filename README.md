@@ -382,7 +382,7 @@ public MainWindow()
 
 ![fonts-installer-cmd-help](Assets/fonts-installer-cmd-help.png)
 
-Another seamless way of installing fonts is using Fonts Installer's command-line utility **FontsIstaller.Cmd**.
+Another seamless way of installing fonts is using Fonts Installer's command-line utility **FontsInstaller.Cmd**.
 
 Below is a list of sample commands you can tailor for use:
 
