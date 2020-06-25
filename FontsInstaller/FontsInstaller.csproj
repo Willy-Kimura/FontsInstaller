@@ -9,6 +9,8 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WK.Libraries.FontsInstallerNS</RootNamespace>
     <AssemblyName>FontsInstaller</AssemblyName>
+    <PackageID>FontsInstaller</PackageID>
+    <RepositoryUrl>https://github.com/Willy-Kimura/FontsInstaller.git</RepositoryUrl>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -42,10 +44,10 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="Ookii.Dialogs">
-      <HintPath>..\..\..\..\Documents\Visual Studio 2017\Projects\Ookii.Dialogs\Ookii.Dialogs.dll</HintPath>
+      <HintPath>..\packages\Ooki.Dialogs.1.0.0\Ookii.Dialogs.dll</HintPath>
     </Reference>
     <Reference Include="ProgressControls">
-      <HintPath>..\..\..\..\Documents\Visual Studio 2017\Projects\ProgressIndicator1.2_source\ProgressIndicator\ProgressIndicator\bin\Debug\ProgressControls.dll</HintPath>
+      <HintPath>..\packages\ProgressControl.1.0.0\ProgressControls.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Design" />
